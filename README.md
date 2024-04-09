@@ -44,6 +44,13 @@ If you are in the root directory of this repository, simply:
 cd generation # from the root directory
 ```
 
+If you want to download all pre-trained checkpoints for the compositional image generation models, as well as the object/state classifier, you can run the following command:
+```bash
+bash download_checkpoints.sh --all
+```
+Then you can skip all the checkpoint downloading steps in the following sections.
+
+
 ### Training
 To train the compositional image generation model [SD+TI+FT](https://chopnlearn.github.io/#:~:text=Inversion%20%2B%20Fine%2Dtuning%20(-,SD%20%2B%20TI%20%2B%20FT,-)), run the following command:
 
@@ -67,7 +74,16 @@ Similarly, to only do the textual inversion, i.e., to reproduce the [SD+TI](http
 
 ### Sampling
 
-Please download the pre-trained compositional image generation model checkpoints from [here](), extract them and place them in the `./checkpoints` directory. The checkpoints are named as `SD+TI+FT`, `SD+TI`, and `SD+FT` for the models with textual inversion and fine-tuning, textual inversion only, and fine-tuning only, respectively.
+If you haven't, please download the pre-trained compositional image generation model checkpoints and extract them using the following command:
+
+```bash
+bash download_checkpoints.sh SD+TI+FT # or SD+TI or SD+FT
+```
+We provide the pre-trained checkpoints for `SD+TI+FT`, `SD+TI`, and `SD+FT` models, and we use the `SD+TI+FT` model as the example in this section.
+`SD+TI+FT`, `SD+TI`, and `SD+FT` are models with textual inversion and fine-tuning, textual inversion only, and fine-tuning only, respectively.
+
+You can also find the urls for the checkpoints in the `download_checkpoints.sh` file and download them manually. Remember to extract the downloaded checkpoints and place them in the `./checkpoints` directory.
+
 
 To sample from the 'SD+TI+FT' model, run the following command:
 
@@ -104,7 +120,15 @@ This will compute the Patch FID score between the generated images saved in `./s
 
 #### Object/State Accuracy
 
-The automatic object/state accuracy evaluation requires a pre-trained object/state classifier. We provide the pre-trained classifier checkpoint for the object/state classification task. Please download the checkpoint from [here](), extract it, and place it in the `./checkpoints` directory. The checkpoint is named as `object_state_classifier_checkpoint.ckpt`.
+The automatic object/state accuracy evaluation requires a pre-trained object/state classifier. We provide the pre-trained classifier checkpoint for the object/state classification task. 
+<!-- Please download the checkpoint from [here](), extract it, and place it in the `./checkpoints` directory.  -->
+If you haven't, please download the pre-trained object/state classifier checkpoint and extract it using the following command:
+
+```bash
+bash download_checkpoints.sh classifier
+```
+
+The extracted checkpoint is named as `object_state_classifier_checkpoint.ckpt`.
 
 To compute the object/state accuracy, run the following command:
 
