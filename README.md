@@ -29,7 +29,7 @@ accelerate config
 ```
 
 ## Data Preparation
-Please download the Chop & Learn image dataset from [here](https://drive.google.com/drive/folders/1QylDeUJ8h-CjLRJ8Z9bsdCoQ2uMs59W_) and extract the `image_dataset` folder in the root directory of the repository. The dataset contains the following files:
+Please download the Chop & Learn image dataset from [here](https://obj.umiacs.umd.edu/chopnlearn/chopnlearn_dataset_index.html) and extract the `image_dataset` folder in the root directory of the repository. The dataset contains the following files:
 - `image_dataset/images`: contains the images
 - `image_dataset/train_split.json`: contains the training split
 - `image_dataset/test_split.json`: contains the test split
